@@ -4,6 +4,8 @@ This script uses AutoHotKey v2. It adds additional features to the CapsLock key.
 ## About
 Using a 65% keyboard is nice since it physically takes up less desk space but you also sacrifice some keys in the process. Some of the features in this mod may already exist on other 65% keyboards built in with their Fn key, my keyboard does not hence this script.
 
+Tip: Leave the ``.ahk`` file in your startup folders so it runs automatically at start
+
 ## Features
 - Ability to pin active window
 -- The pinned window will stay on top of all programs until toggled again
