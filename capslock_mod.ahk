@@ -51,15 +51,22 @@ CapsLock & =::Volume_Up
 
 ; Additional Volume Control (uses Mouse Scroll wheel)
 ; By increments of 1
-CapsLock & WheelUp::VolumeOSD("+1")
-CapsLock & WheelDown::VolumeOSD("-1")
+CapsLock & WheelUp::
+{
+    VolumeOSD("+1")
+}
+
+CapsLock & WheelDown::
+{
+    VolumeOSD("-1")
+}
 
 VolumeOSD(v)
 {
     SoundSetVolume v ; Use a string "+1" or "-1"
     try if shellProvider := ComObject("{C2F03A33-21F5-47FA-B4BB-156362A2F239}", "{00000000-0000-0000-C000-000000000046}")
-    try if flyoutDisp := ComObjQuery(shellProvider, "{41f9d2fb-7834-4ab6-8b1b-73e74064b465}", "{41f9d2fb-7834-4ab6-8b1b-73e74064b465}")
-    ComCall(3, flyoutDisp, "int", 0, "uint", 0)
+        try if flyoutDisp := ComObjQuery(shellProvider, "{41f9d2fb-7834-4ab6-8b1b-73e74064b465}", "{41f9d2fb-7834-4ab6-8b1b-73e74064b465}")
+            ComCall(3, flyoutDisp, "int", 0, "uint", 0)
 }
 
 ;-------------------------------------------------------------------------------
